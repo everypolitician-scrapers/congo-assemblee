@@ -53,6 +53,7 @@ added = 0
       term: '13',
       source: member_url,
     }
+    data[:party] = "Independent" if data[:party].empty? || data[:party] == 'INDEPENDANT'
     data[:picture] = URI.join(member_url, URI.escape(data[:picture])).to_s unless data[:picture].nil? or data[:picture].empty?
     # puts data.values.to_csv
     added += 1
